@@ -1,0 +1,190 @@
+object fConvertIngred: TfConvertIngred
+  Left = 280
+  Top = 219
+  BorderStyle = bsDialog
+  Caption = 'Не найден ингредиент'
+  ClientHeight = 274
+  ClientWidth = 332
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 332
+    Height = 89
+    Align = alTop
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 26
+      Top = 20
+      Width = 281
+      Height = 49
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -13
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      WordWrap = True
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 89
+    Width = 332
+    Height = 41
+    Align = alTop
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object BitBtn1: TBitBtn
+      Left = 17
+      Top = 8
+      Width = 75
+      Height = 25
+      Cursor = crHandPoint
+      Hint = 'Добавить ингредиент как новый'
+      Caption = 'Добавить'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      OnClick = BitBtn1Click
+    end
+    object BitBtn2: TBitBtn
+      Left = 105
+      Top = 8
+      Width = 75
+      Height = 25
+      Cursor = crHandPoint
+      Hint = 'Привязать к существующему (выбери внизу и нажми эту кнопку)'
+      Caption = 'Привязать'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      OnClick = BitBtn2Click
+    end
+    object BitBtn3: TBitBtn
+      Left = 193
+      Top = 8
+      Width = 121
+      Height = 25
+      Cursor = crHandPoint
+      Hint = 'Не делать ничего'
+      Caption = 'Ничего не делать'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 0
+      OnClick = BitBtn3Click
+    end
+  end
+  object grIngreds: TDBGrid
+    Left = 0
+    Top = 130
+    Width = 332
+    Height = 144
+    Align = alClient
+    DataSource = dsIngreds
+    Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'MS Sans Serif'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Ingrid'
+        Title.Alignment = taCenter
+        Title.Caption = 'Ингредиент'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clNavy
+        Title.Font.Height = -11
+        Title.Font.Name = 'MS Sans Serif'
+        Title.Font.Style = [fsBold]
+        Width = 294
+        Visible = True
+      end>
+  end
+  object tIngreds: TTable
+    Active = True
+    DatabaseName = 'BD_Share'
+    IndexFieldNames = 'Ingrid'
+    TableName = 'Ingrids.DB'
+    Left = 112
+    Top = 152
+    object tIngredsCodeIngrid: TAutoIncField
+      FieldName = 'CodeIngrid'
+      ReadOnly = True
+    end
+    object tIngredsIngrid: TStringField
+      FieldName = 'Ingrid'
+      Required = True
+      Size = 35
+    end
+    object tIngredsLos: TIntegerField
+      FieldName = 'Los'
+    end
+    object tIngredsPos: TIntegerField
+      FieldName = 'Pos'
+    end
+    object tIngredsCodeLab: TFloatField
+      FieldName = 'CodeLab'
+    end
+    object tIngredsKoefLOS: TFloatField
+      FieldName = 'KoefLOS'
+    end
+    object tIngredsKoefPOS: TFloatField
+      FieldName = 'KoefPOS'
+    end
+    object tIngredsNorma: TFloatField
+      FieldName = 'Norma'
+    end
+    object tIngredsToks: TFloatField
+      FieldName = 'Toks'
+    end
+    object tIngredsIsPH: TBooleanField
+      FieldName = 'IsPH'
+    end
+    object tIngredsNewCodeLab: TFloatField
+      FieldName = 'NewCodeLab'
+    end
+  end
+  object dsIngreds: TDataSource
+    DataSet = tIngreds
+    Left = 144
+    Top = 152
+  end
+end

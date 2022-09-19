@@ -1,0 +1,72 @@
+unit uChangeIngrid;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ComCtrls, ToolWin, StdCtrls, Mask, DBCtrls, ExtCtrls;
+
+type
+  TfChangeIngrid = class(TForm)
+    ToolBar1: TToolBar;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    Panel1: TPanel;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    DBEdit6: TDBEdit;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBEdit7: TDBEdit;
+    Label8: TLabel;
+    Label9: TLabel;
+    DBEdit8: TDBEdit;
+    DBEdit9: TDBEdit;
+    procedure ToolButton1Click(Sender: TObject);
+    procedure ToolButton2Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fChangeIngrid: TfChangeIngrid;
+
+implementation
+
+uses uDm;
+
+{$R *.DFM}
+
+procedure TfChangeIngrid.ToolButton1Click(Sender: TObject);
+begin
+  ModalResult := mrOk;
+end;
+
+procedure TfChangeIngrid.ToolButton2Click(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+procedure TfChangeIngrid.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Shift = [] then
+    case Key of
+      VK_RETURN : begin Key := 0; ModalResult := mrOk;     end;
+      VK_ESCAPE : begin Key := 0; ModalResult := mrCancel; end;
+    end;
+end;
+
+end.

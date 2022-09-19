@@ -1,0 +1,180 @@
+object fEditWork: TfEditWork
+  Left = 335
+  Top = 117
+  HelpContext = 120
+  BorderStyle = bsDialog
+  Caption = #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1087#1088#1077#1076#1087#1088#1080#1103#1090#1080#1103
+  ClientHeight = 146
+  ClientWidth = 395
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  HelpFile = 'OutLimit'
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 395
+    Height = 42
+    AutoSize = True
+    ButtonHeight = 38
+    ButtonWidth = 39
+    Caption = 'ToolBar1'
+    EdgeBorders = [ebLeft, ebTop, ebRight, ebBottom]
+    Flat = True
+    HotImages = fDm.HotImages
+    Images = fDm.Images
+    TabOrder = 0
+    object btnOk: TToolButton
+      Left = 0
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1047#1072#1087#1080#1089#1072#1090#1100' '#1080#1079#1084#1077#1085#1077#1085#1080#1103' (ENTER)'
+      Caption = 'btnOk'
+      ImageIndex = 12
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnOkClick
+    end
+    object btnCancel: TToolButton
+      Left = 39
+      Top = 0
+      Cursor = crHandPoint
+      Hint = #1054#1090#1084#1077#1085#1080#1090#1100' '#1080#1079#1084#1077#1085#1077#1085#1080#1103' (ESC)'
+      Caption = 'btnCancel'
+      ImageIndex = 13
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = btnCancelClick
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 42
+    Width = 395
+    Height = 104
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 31
+      Top = 36
+      Width = 100
+      Height = 13
+      Caption = #8470' '#1087#1083#1072#1090#1077#1083#1100#1097#1080#1082#1072':'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 6
+      Top = 60
+      Width = 125
+      Height = 13
+      Caption = #1043#1088#1091#1087#1087#1072' '#1087#1086#1090#1088#1077#1073#1080#1090#1077#1083#1103':'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 48
+      Top = 12
+      Width = 83
+      Height = 13
+      Caption = #1055#1088#1077#1076#1087#1088#1080#1103#1090#1080#1077':'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object SpeedButton1: TSpeedButton
+      Left = 200
+      Top = 56
+      Width = 23
+      Height = 22
+      Cursor = crHandPoint
+      Hint = #1048#1089#1090#1086#1088#1080#1103' '#1080#1079#1084#1077#1085#1077#1085#1080#1103' '#1075#1088#1091#1087#1087#1099
+      Flat = True
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00555555555555
+        55555555FFFFFFFF5555555000000005555555577777777FF555550999999900
+        55555575555555775F55509999999901055557F55555557F75F5001111111101
+        105577FFFFFFFF7FF75F00000000000011057777777777775F755070FFFFFF0F
+        01105777F555557F7FF75500FFFFFF0F00105577F555FF7F77575550FF70000F
+        0F0055575FF777757F775555000FFFFF0F005555777555FF7F77555550FF7000
+        0F055555575FF777757F555555000FFFFF05555555777555FF7F55555550FF70
+        0005555555575FF7777555555555000555555555555577755555555555555555
+        5555555555555555555555555555555555555555555555555555}
+      NumGlyphs = 2
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = SpeedButton1Click
+    end
+    object DBEdit2: TDBEdit
+      Left = 132
+      Top = 56
+      Width = 61
+      Height = 21
+      DataField = 'Gruppa'
+      DataSource = fDm.dsWorks
+      ReadOnly = True
+      TabOrder = 2
+    end
+    object DBEdit3: TDBEdit
+      Left = 132
+      Top = 8
+      Width = 253
+      Height = 21
+      DataField = 'Works'
+      DataSource = fDm.dsWorks
+      TabOrder = 0
+    end
+    object DBEdit1: TDBEdit
+      Left = 132
+      Top = 32
+      Width = 89
+      Height = 21
+      DataField = 'PlatNumber'
+      DataSource = fDm.dsWorks
+      TabOrder = 1
+    end
+    object DBCheckBox1: TDBCheckBox
+      Left = 132
+      Top = 80
+      Width = 97
+      Height = 17
+      Caption = #1042#1099#1076#1077#1083#1080#1090#1100'?'
+      DataField = 'Color'
+      DataSource = fDm.dsWorks
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clNavy
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 3
+      ValueChecked = 'True'
+      ValueUnchecked = 'False'
+    end
+  end
+end
